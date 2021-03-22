@@ -2,7 +2,7 @@
 resource "google_compute_network" "vpc" {
   name                    = "${var.project_id}-vpc"
   auto_create_subnetworks = "false"
-  routing_mode            = "GLOBAL"
+  routing_mode            = "REGIONAL"
 }
 
 # Public IP NAT Service

@@ -1,9 +1,5 @@
 terraform {
   required_version = ">= 0.14"
-  backend "gcs" {
-    bucket  = "tf-state-data-platform-model"
-    prefix  = "terraform/state"
-  }
 }
 
 provider "google" {

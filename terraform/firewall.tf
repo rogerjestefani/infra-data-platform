@@ -18,7 +18,7 @@ resource "google_compute_firewall" "allow-internal-gke" {
   ]
 }
 
-# Allow SSH
+# Allow SSH BASTION
 # https://cloud.google.com/solutions/building-internet-connectivity-for-private-vms?hl=pt-br#create_firewall_rules_to_allow_tunneling
 resource "google_compute_firewall" "allow-ssh" {
   name    = "${var.project_id}-fw-allow-ssh"
@@ -29,5 +29,8 @@ resource "google_compute_firewall" "allow-ssh" {
   }
   source_ranges = [
     "35.235.240.0/20"
+  ]
+  target_tags = [
+    "bastion"
   ]
 }

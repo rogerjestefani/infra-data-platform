@@ -52,3 +52,9 @@ variable "private_subnet_cidr_services" {
   type        = string
   default     = "10.30.0.0/20"
 }
+# 
+variable "private_subnet_cidr_bastion" {
+  description = "Private Subnet CIDR Bastion"
+  type        = string
+  default     = "10.100.0.0/16"
+}

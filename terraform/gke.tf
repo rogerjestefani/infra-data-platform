@@ -50,7 +50,7 @@ resource "google_container_node_pool" "normal_nodes" {
 
   autoscaling {
     min_node_count = "2"
-    max_node_count = "5"
+    max_node_count = "8"
   }
 
   node_config {
@@ -61,6 +61,7 @@ resource "google_container_node_pool" "normal_nodes" {
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/devstorage.read_write",
     ]
   }
 }
@@ -77,17 +78,18 @@ resource "google_container_node_pool" "preemptible_nodes" {
 
   autoscaling {
     min_node_count = "0"
-    max_node_count = "5"
+    max_node_count = "8"
   }
 
   node_config {
     preemptible     = true
-    machine_type    = "n1-standard-2"
+    machine_type    = "n1-highmem-2"
     service_account = google_service_account.gke_sa.email
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/devstorage.read_write",
     ]
   }
 }

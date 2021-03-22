@@ -32,6 +32,17 @@ output "nat_ip_address" {
   value = google_compute_address.nat_ip.address
 }
 
+# Private Subnet
+resource "google_compute_subnetwork" "private_subnet_bastion" {
+  provider                 = google-beta
+  purpose                  = "PRIVATE"
+  name                     = "${var.project_id}-private-subnet-bastion"
+  ip_cidr_range            = var.private_subnet_cidr_bastion
+  network                  = google_compute_network.vpc.name
+  region                   = var.region
+  private_ip_google_access = "true"
+}
+
 # Private Subnet Gke
 resource "google_compute_subnetwork" "private_subnet_gke" {
   provider                 = google-beta

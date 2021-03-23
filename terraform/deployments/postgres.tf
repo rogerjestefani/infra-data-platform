@@ -36,11 +36,11 @@ resource "kubernetes_deployment" "postgres_db" {
           resources {
             limits = {
               cpu    = "2"
-              memory = "4096Mi"
+              memory = "2048Mi"
             }
             requests = {
               cpu    = "2"
-              memory = "4096Mi"
+              memory = "2048Mi"
             }
           }
         }

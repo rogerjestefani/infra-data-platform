@@ -38,24 +38,19 @@ resource "google_container_cluster" "gke_cluster" {
 
 }
 
-resource "google_container_node_pool" "normal_nodes" {
-  name       = "normal-nodes"
+resource "google_container_node_pool" "deploy_nodes" {
+  name       = "deploy-nodes"
   location   = var.zone
   cluster    = var.gke_name
-  node_count = 2
+  node_count = 4
 
   depends_on = [
     google_container_cluster.gke_cluster
   ]
 
-  autoscaling {
-    min_node_count = "2"
-    max_node_count = "8"
-  }
-
   node_config {
     preemptible     = false
-    machine_type    = "n1-standard-2"
+    machine_type    = "n1-standard-4"
     service_account = google_service_account.gke_sa.email
 
     oauth_scopes = [

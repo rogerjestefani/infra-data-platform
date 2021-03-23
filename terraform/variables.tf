@@ -31,7 +31,7 @@ variable "private_subnet_cidr" {
 variable "private_subnet_cidr_gke_master" {
   description = "Private Subnet CIDR Master"
   type        = string
-  default     = "10.0.0.0/28"
+  default     = "10.5.0.0/28"
 }
 
 # Private Range IPs GKE
@@ -52,9 +52,9 @@ variable "private_subnet_cidr_services" {
   type        = string
   default     = "10.30.0.0/20"
 }
-# 
+# Subnet CIDR Bastion
 variable "private_subnet_cidr_bastion" {
   description = "Private Subnet CIDR Bastion"
   type        = string
-  default     = "10.100.0.0/16"
+  default     = "10.1.1.0/29"
 }

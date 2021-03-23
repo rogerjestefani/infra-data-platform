@@ -11,7 +11,7 @@ SSH TUNNEL
  $ gcloud beta compute ssh example-instance --zone=us-central1-a -- \
             -vvv -L 80:%INSTANCE%:80
 
-gcloud beta compute ssh --zone "us-east1-b" "bastion" --tunnel-through-iap --project "abiding-window-307913" -- -vnNT -L 8443:10.0.0.2:443
+gcloud beta compute ssh --zone "us-east1-b" "bastion" --tunnel-through-iap --project "abiding-window-307913" -- -vnNT -L 8443:10.5.0.2:443
 
 gcloud container clusters get-credentials gke-cluster --zone us-east1-b --project abiding-window-307913
 

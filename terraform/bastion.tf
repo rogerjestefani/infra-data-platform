@@ -18,7 +18,7 @@ resource "google_compute_instance" "bastion" {
   }
   network_interface {
     subnetwork = google_compute_subnetwork.private_subnet_bastion.name
-    network_ip = "10.100.0.10"
+    network_ip = "10.1.1.2"
 
   }
   metadata_startup_script = <<SCRIPT

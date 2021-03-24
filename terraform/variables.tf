@@ -23,6 +23,11 @@ variable "folder_files_path" {
  description = "Path folder File"
 }
 
+variable "folder_files_path_scripts" {
+ type        = string
+ description = "Path folder File Scripts"
+}
+
 variable "storage_class" {
   description = "GCP Storage Class Bucket"
   type        = string

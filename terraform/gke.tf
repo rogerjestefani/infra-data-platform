@@ -60,7 +60,7 @@ resource "google_container_node_pool" "preemptible_nodes" {
   name       = "preemptible-nodes"
   location   = var.zone
   cluster    = var.gke_name
-  node_count = 0
+  node_count = 2
 
   depends_on = [
     google_container_cluster.gke_cluster
@@ -68,7 +68,7 @@ resource "google_container_node_pool" "preemptible_nodes" {
 
   autoscaling {
     min_node_count = "0"
-    max_node_count = "3"
+    max_node_count = "2"
   }
 
   node_config {

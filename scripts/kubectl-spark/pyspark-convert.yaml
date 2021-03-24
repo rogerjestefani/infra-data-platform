@@ -1,0 +1,33 @@
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: pyspark-convert
+  namespace: default
+spec:
+  type: Python
+  pythonVersion: "3"
+  mode: cluster
+  image: "gcr.io/abiding-window-307913/docker-spark-slim:3.0.0"
+  imagePullPolicy: Always
+  mainApplicationFile: "gs://dl_spark_scripts/pyspark-convert.py"
+  sparkVersion: "3.0.0"
+  restartPolicy:
+    type: OnFailure
+    onFailureRetries: 3
+    onFailureRetryInterval: 10
+    onSubmissionFailureRetries: 5
+    onSubmissionFailureRetryInterval: 20
+  driver:
+    cores: 2
+    memory: "1024m"
+    labels:
+      version: 3.0.0
+    serviceAccount: spark-sa
+  executor:
+    cores: 1
+    instances: 2
+    memory: "2048m"
+    labels:
+      version: 3.0.0
+  nodeSelector:
+    cloud.google.com/gke-nodepool: 'preemptible-nodes'

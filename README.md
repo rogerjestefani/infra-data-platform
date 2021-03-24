@@ -74,13 +74,21 @@ $ vi terraform/terraform.tfvars
 ```
 # PROJECT ID
 project_id="<PROJETO ID>"
+# Service Account INFRA
+infra_sa = "<SA EMAIL>"
 ```
 
 Entre no console da Google Cloud e crie um Service Account com Perfil "Editor". Ele vai ser responsavel por criar a infraestrutura de seu projeto.
 
 ```sh
 $ export GOOGLE_CREDENTIALS='infra-sa.json'
+$ export GOOGLE_CLOUD_PROJECT='nome_projeto_id'
 ```
+
+```sh
+gcloud auth activate-service-account --key-file=$GOOGLE_CREDENTIALS --project=$GOOGLE_CLOUD_PROJECT
+```
+
 
 ```sh
 $ cd terraform

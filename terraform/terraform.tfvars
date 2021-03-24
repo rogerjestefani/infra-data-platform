@@ -12,4 +12,5 @@ zone = "us-east1-b"
 gke_name = "gke-cluster"
 
 # FILES
-folder_files_path = "./files"
+folder_files_path = "files"
+folder_files_path_scripts = "scripts_spark"

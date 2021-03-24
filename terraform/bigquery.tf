@@ -1,23 +1,3 @@
-resource "google_bigquery_table" "dataset_table" {
-  deletion_protection = false
-  dataset_id = google_bigquery_dataset.dataset.dataset_id
-  table_id   = "dataset_table"
-  schema = <<EOF
-[
-  {
-    "name": "id",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "contents",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  }
-]
-EOF
-}
-
 resource "google_bigquery_dataset" "dataset" {
   depends_on = [
     null_resource.upload_folder_content
@@ -39,13 +19,33 @@ resource "google_bigquery_dataset" "dataset" {
   }
 }
 
+resource "google_bigquery_table" "dataset_table" {
+  deletion_protection = false
+  dataset_id = google_bigquery_dataset.dataset.dataset_id
+  table_id   = "dataset_table"
+  schema = <<EOF
+[
+  {
+    "name": "id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "contents",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
+EOF
+}
+
 resource "google_bigquery_job" "job_load" {
   depends_on = [
     google_bigquery_dataset.dataset,
     google_bigquery_table.dataset_table
   ]
 
-  job_id     = "job_load_v1"
+  job_id     = "job_load_v10"
 
   load {
     source_uris = [

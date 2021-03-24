@@ -45,7 +45,7 @@ resource "google_bigquery_job" "job_load" {
     google_bigquery_table.dataset_table
   ]
 
-  job_id     = "job_load_v10"
+  job_id     = "job_load_v5"
 
   load {
     source_uris = [

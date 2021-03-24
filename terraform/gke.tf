@@ -60,7 +60,7 @@ resource "google_container_node_pool" "preemptible_nodes" {
   name       = "preemptible-nodes"
   location   = var.zone
   cluster    = var.gke_name
-  node_count = 2
+  node_count = 0
 
   depends_on = [
     google_container_cluster.gke_cluster

@@ -1,8 +1,3 @@
-resource "google_service_account" "gke_sa" {
-  account_id   = "${var.gke_name}-sa"
-  display_name = "${var.gke_name}-sa"
-}
-
 resource "google_container_cluster" "gke_cluster" {
   provider = google-beta
   depends_on = [

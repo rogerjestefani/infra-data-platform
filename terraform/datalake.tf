@@ -33,3 +33,16 @@ resource "google_storage_bucket" "refined_data" {
   force_destroy = true
   storage_class = var.storage_class
 }
+
+resource "null_resource" "upload_folder_content" {
+ triggers = {
+   file_hashes = jsonencode({
+   for fn in fileset(var.folder_files_path, "**") :
+   fn => filesha256("${var.folder_files_path}/${fn}")
+   })
+ }
+
+ provisioner "local-exec" {
+   command = "gsutil cp -r ${var.folder_files_path}/* gs://${google_storage_bucket.raw_data.name}/"
+ }
+}

@@ -2,6 +2,10 @@ variable "project_id" {
   description = "GCP Project ID."
 }
 
+variable "infra_sa" {
+  description = "GCP ServiceAccount."
+}
+
 variable "zone" {
   description = "GCP ZOne"
 }
@@ -12,6 +16,11 @@ variable "region" {
 
 variable "gke_name" {
   description = "GCP GKE Name"
+}
+
+variable "folder_files_path" {
+ type        = string
+ description = "Path folder File"
 }
 
 variable "storage_class" {

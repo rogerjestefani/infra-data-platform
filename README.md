@@ -388,6 +388,8 @@ $ terraform destroy
 
 ## REFERÊNCIAS
 
+- <https://www.linkedin.com/pulse/3-camadas-para-sucesso-do-meu-data-lake-marcelo-leite-/>
+- <https://medium.com/data-hackers/o-guia-semi-definitivo-para-data-lakes-461b1878697f>
 - <https://blog.rabbitmq.com/posts/2020/11/rabbitmq-kubernetes-operator-reaches-1-0/>
 - <https://www.rabbitmq.com/kubernetes/operator/using-operator.html>
 - <https://gcplinux.com/gcp-gke-run-kubectl-through-bastion-host/>

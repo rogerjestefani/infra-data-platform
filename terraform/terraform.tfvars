@@ -1,0 +1,16 @@
+# PROJECT ID
+project_id = "<projeto_id>"
+
+# Service Account INFRA
+infra_sa = "<sa_email>"
+
+# REGION / ZONE
+region = "us-east1"
+zone = "us-east1-b"
+
+# GKE NAME
+gke_name = "gke-cluster"
+
+# FILES
+folder_files_path = "files"
+folder_files_path_scripts = "scripts_spark"

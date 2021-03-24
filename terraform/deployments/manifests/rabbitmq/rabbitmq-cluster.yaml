@@ -1,0 +1,14 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: rabbitmq-cluster
+spec:
+  resources:
+    requests:
+      cpu: 1000m
+      memory: 2Gi
+    limits:
+      cpu: 1000m
+      memory: 2Gi
+  nodeSelector:
+    cloud.google.com/gke-nodepool: 'deploy-nodes'

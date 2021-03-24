@@ -386,9 +386,23 @@ Para destruir a infra somente executar o comando abaixo:
 $ terraform destroy
 ```
 
+## REFERÊNCIAS
 
-
-
+- <https://blog.rabbitmq.com/posts/2020/11/rabbitmq-kubernetes-operator-reaches-1-0/>
+- <https://www.rabbitmq.com/kubernetes/operator/using-operator.html>
+- <https://gcplinux.com/gcp-gke-run-kubectl-through-bastion-host/>
+- <https://medium.com/@0d6e/creating-an-ssh-bastion-host-in-google-cloud-vpc-86d65509eb42>
+- <https://github.com/hashicorp/learn-terraform-provision-gke-cluster>
+- <https://gcplinux.com/gcp-gke-run-kubectl-through-bastion-host/>
+- <https://github.com/terraform-google-modules/terraform-google-bastion-host>
+- <https://medium.com/@0d6e/creating-an-ssh-bastion-host-in-google-cloud-vpc-86d65509eb42>
+- <https://medium.com/faun/creating-reusable-infrastructure-with-terraform-on-gcp-e17745ac4ff2>
+- <https://cloud.google.com/nat/docs/overview?authuser=1#private_google_access>
+- <https://cloud.google.com/community/tutorials/getting-started-on-gcp-with-terraform>
+- <https://gmusumeci.medium.com/how-to-configure-the-gcp-backend-for-terraform-7ea24f59760a>
+- <https://gmusumeci.medium.com/getting-started-with-terraform-and-google-cloud-platform-gcp-deploying-vms-in-a-private-only-f9ab61fa7d15>
+- <https://github.com/guillermo-musumeci/terraform-gcp-single-region-private-lb-unmanaged>
+- <https://github.com/GoogleCloudPlatform/spark-on-k8s-operator>
 
 
 

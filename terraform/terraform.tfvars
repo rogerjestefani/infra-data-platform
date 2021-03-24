@@ -1,8 +1,8 @@
 # PROJECT ID
-project_id = "abiding-window-307913"
+project_id = "<projeto_id>"
 
 # Service Account INFRA
-infra_sa = "infra-754@abiding-window-307913.iam.gserviceaccount.com"
+infra_sa = "<sa_email>"
 
 # REGION / ZONE
 region = "us-east1"
